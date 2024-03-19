@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/assets/images/dogicon.png';
@@ -8,16 +9,23 @@ import profileDefault from '@/assets/images/usericon.png';
 import { FaGoogle } from 'react-icons/fa';
 
 const Navbar = () => {
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const [isOptimizerMenuOpen, setIsOptimizerMenuOpen] = useState(false);
+  const [isSimulatoreMenuOpen, setIsSimulatorMenuOpen] = useState(false);
+
 
   const tabIndexValue: number = -1;
 
   return (
     <nav className='bg-blue-700 border-b border-blue-500'>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
-        <div className='relative flex h-20 items-center justify-between'>
+        <div className='relative flex h-16 items-center justify-between'>
+
+          {/* <!-- Mobile menu--> */}
           <div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
+
             {/* <!-- Mobile menu button--> */}
             <button
               type='button'
@@ -114,7 +122,7 @@ const Navbar = () => {
                 </button>
               </div>
 
-              {/* <!-- Profile dropdown --> */}
+              {/* <!-- BEGIN Profile dropdown --> */}
               {isProfileMenuOpen && (
                 <div
                   id='user-menu'
@@ -140,7 +148,7 @@ const Navbar = () => {
                     tabIndex={tabIndexValue}
                     id='user-menu-item-2'
                   >
-                    Saved Properties
+                    Manage Subscriptions
                   </Link>
                   <button
                     className='block px-4 py-2 text-sm text-gray-700'
@@ -152,12 +160,15 @@ const Navbar = () => {
                   </button>
                 </div>
               )}
+              {/* <!-- END Profile dropdown --> */}
+
             </div>
           </div>
         </div>
       </div>
 
-      {/* <!-- Mobile menu, show/hide based on menu state. --> */}
+
+      {/* <!-- BEGIN Mobile menu, show/hide based on menu state. --> */}
       {isMobileMenuOpen && (
         <div id='mobile-menu'>
           <div className='space-y-1 px-2 pb-3 pt-2'>
@@ -186,6 +197,9 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      {/* <!-- END Mobile menu --> */}
+
+
     </nav>
   );
 };

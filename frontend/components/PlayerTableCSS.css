@@ -1,0 +1,25 @@
+
+
+
+
+.ag-header-cell-label {
+  display: flex;
+  justify-content: center; /* Centers content along the main axis (horizontal in row layout, vertical in column layout) */
+  align-items: center; /* Centers content along the cross axis (vertical in row layout, horizontal in column layout) */
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+
+
+
+.ag-row {
+  display: flex;
+  justify-content: center; /* Centers content along the main axis (horizontal in row layout, vertical in column layout) */
+  align-items: center; /* Centers content along the cross axis (vertical in row layout, horizontal in column layout) */
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  
+}
